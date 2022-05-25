@@ -26,64 +26,145 @@ public class frmLogin extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        pnlAccedi = new javax.swing.JPanel();
+        pnlCredenziali = new javax.swing.JPanel();
+        lblUsername = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        lblPassword = new javax.swing.JLabel();
+        pswPassword = new javax.swing.JPasswordField();
+        btnAccedi = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        pnlRegistrati = new javax.swing.JPanel();
+        pnlCredenziali2 = new javax.swing.JPanel();
+        lblUsername1 = new javax.swing.JLabel();
+        txtUsername1 = new javax.swing.JTextField();
+        lblPassword1 = new javax.swing.JLabel();
+        pswPassword1 = new javax.swing.JPasswordField();
+        lblTavoli = new javax.swing.JLabel();
+        spnTavoli = new javax.swing.JSpinner();
+        btnRegistrati = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
+
+        pnlCredenziali.setLayout(new java.awt.GridLayout(2, 2, 0, 10));
+
+        lblUsername.setText("Username");
+        pnlCredenziali.add(lblUsername);
+        pnlCredenziali.add(txtUsername);
+
+        lblPassword.setText("Password");
+        pnlCredenziali.add(lblPassword);
+        pnlCredenziali.add(pswPassword);
+
+        btnAccedi.setText("Accedi");
+
+        jCheckBox1.setText("Ricordami");
+
+        javax.swing.GroupLayout pnlAccediLayout = new javax.swing.GroupLayout(pnlAccedi);
+        pnlAccedi.setLayout(pnlAccediLayout);
+        pnlAccediLayout.setHorizontalGroup(
+            pnlAccediLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAccediLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(pnlCredenziali, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlAccediLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(pnlAccediLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAccedi, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBox1))
+                .addGap(117, 117, 117))
+        );
+        pnlAccediLayout.setVerticalGroup(
+            pnlAccediLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlAccediLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(pnlCredenziali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAccedi)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Accedi", pnlAccedi);
+
+        pnlCredenziali2.setLayout(new java.awt.GridLayout(3, 2, 0, 10));
+
+        lblUsername1.setText("Username");
+        pnlCredenziali2.add(lblUsername1);
+        pnlCredenziali2.add(txtUsername1);
+
+        lblPassword1.setText("Password");
+        pnlCredenziali2.add(lblPassword1);
+        pnlCredenziali2.add(pswPassword1);
+
+        lblTavoli.setText("Numero tavoli");
+        pnlCredenziali2.add(lblTavoli);
+        pnlCredenziali2.add(spnTavoli);
+
+        btnRegistrati.setText("Registrati");
+
+        javax.swing.GroupLayout pnlRegistratiLayout = new javax.swing.GroupLayout(pnlRegistrati);
+        pnlRegistrati.setLayout(pnlRegistratiLayout);
+        pnlRegistratiLayout.setHorizontalGroup(
+            pnlRegistratiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistratiLayout.createSequentialGroup()
+                .addGap(62, 62, 62)
+                .addComponent(pnlCredenziali2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegistratiLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnRegistrati)
+                .addGap(113, 113, 113))
+        );
+        pnlRegistratiLayout.setVerticalGroup(
+            pnlRegistratiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegistratiLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(pnlCredenziali2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRegistrati)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Registrati", pnlRegistrati);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                frmLogin dialog = new frmLogin(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAccedi;
+    private javax.swing.JButton btnRegistrati;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPassword1;
+    private javax.swing.JLabel lblTavoli;
+    private javax.swing.JLabel lblUsername;
+    private javax.swing.JLabel lblUsername1;
+    private javax.swing.JPanel pnlAccedi;
+    private javax.swing.JPanel pnlCredenziali;
+    private javax.swing.JPanel pnlCredenziali2;
+    private javax.swing.JPanel pnlRegistrati;
+    private javax.swing.JPasswordField pswPassword;
+    private javax.swing.JPasswordField pswPassword1;
+    private javax.swing.JSpinner spnTavoli;
+    private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtUsername1;
     // End of variables declaration//GEN-END:variables
 }
