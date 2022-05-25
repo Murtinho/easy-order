@@ -59,6 +59,11 @@ public class frmLogin extends javax.swing.JDialog {
         pnlCredenziali.add(pswPassword);
 
         btnAccedi.setText("Accedi");
+        btnAccedi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAccediActionPerformed(evt);
+            }
+        });
 
         jCheckBox1.setText("Ricordami");
 
@@ -106,6 +111,11 @@ public class frmLogin extends javax.swing.JDialog {
         pnlCredenziali2.add(spnTavoli);
 
         btnRegistrati.setText("Registrati");
+        btnRegistrati.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistratiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlRegistratiLayout = new javax.swing.GroupLayout(pnlRegistrati);
         pnlRegistrati.setLayout(pnlRegistratiLayout);
@@ -145,6 +155,14 @@ public class frmLogin extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistratiActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnRegistratiActionPerformed
+
+    private void btnAccediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccediActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnAccediActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
