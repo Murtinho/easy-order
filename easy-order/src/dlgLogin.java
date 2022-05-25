@@ -7,12 +7,12 @@
  *
  * @author aless
  */
-public class frmLogin extends javax.swing.JDialog {
+public class dlgLogin extends javax.swing.JDialog {
 
     /**
      * Creates new form frmLogin
      */
-    public frmLogin(java.awt.Frame parent, boolean modal) {
+    public dlgLogin(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
