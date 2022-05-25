@@ -46,6 +46,7 @@ public class frmLogin extends javax.swing.JDialog {
         btnRegistrati = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Login");
         setResizable(false);
 
         pnlCredenziali.setLayout(new java.awt.GridLayout(2, 2, 0, 10));
