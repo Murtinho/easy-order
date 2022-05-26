@@ -93,7 +93,7 @@ public class dlgLogin extends javax.swing.JDialog {
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAccedi)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Accedi", pnlAccedi);
@@ -110,6 +110,8 @@ public class dlgLogin extends javax.swing.JDialog {
 
         lblTavoli.setText("Numero tavoli");
         pnlCredenziali2.add(lblTavoli);
+
+        spnTavoli.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
         pnlCredenziali2.add(spnTavoli);
 
         btnRegistrati.setText("Registrati");
