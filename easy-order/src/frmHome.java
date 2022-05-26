@@ -49,6 +49,26 @@ public class frmHome extends javax.swing.JFrame {
 
         lblNome = new javax.swing.JLabel();
         pnlTavoli = new javax.swing.JPanel();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        btn4 = new javax.swing.JButton();
+        btn5 = new javax.swing.JButton();
+        btn6 = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
+        btn8 = new javax.swing.JButton();
+        btn9 = new javax.swing.JButton();
+        btn10 = new javax.swing.JButton();
+        btn11 = new javax.swing.JButton();
+        btn12 = new javax.swing.JButton();
+        btn13 = new javax.swing.JButton();
+        btn14 = new javax.swing.JButton();
+        btn15 = new javax.swing.JButton();
+        btn16 = new javax.swing.JButton();
+        btn17 = new javax.swing.JButton();
+        btn18 = new javax.swing.JButton();
+        btn19 = new javax.swing.JButton();
+        btn20 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         itmRistorante = new javax.swing.JMenuItem();
@@ -69,12 +89,75 @@ public class frmHome extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         getContentPane().add(lblNome, gridBagConstraints);
 
-        pnlTavoli.setLayout(new java.awt.GridLayout());
+        pnlTavoli.setLayout(new java.awt.GridLayout(2, 10, 10, 10));
+
+        btn1.setText("1");
+        pnlTavoli.add(btn1);
+
+        btn2.setText("2");
+        pnlTavoli.add(btn2);
+
+        btn3.setText("3");
+        pnlTavoli.add(btn3);
+
+        btn4.setText("4");
+        pnlTavoli.add(btn4);
+
+        btn5.setText("5");
+        pnlTavoli.add(btn5);
+
+        btn6.setText("6");
+        pnlTavoli.add(btn6);
+
+        btn7.setText("7");
+        pnlTavoli.add(btn7);
+
+        btn8.setText("8");
+        pnlTavoli.add(btn8);
+
+        btn9.setText("9");
+        pnlTavoli.add(btn9);
+
+        btn10.setText("10");
+        pnlTavoli.add(btn10);
+
+        btn11.setText("1");
+        pnlTavoli.add(btn11);
+
+        btn12.setText("2");
+        pnlTavoli.add(btn12);
+
+        btn13.setText("3");
+        pnlTavoli.add(btn13);
+
+        btn14.setText("4");
+        pnlTavoli.add(btn14);
+
+        btn15.setText("5");
+        pnlTavoli.add(btn15);
+
+        btn16.setText("6");
+        pnlTavoli.add(btn16);
+
+        btn17.setText("7");
+        pnlTavoli.add(btn17);
+
+        btn18.setText("8");
+        pnlTavoli.add(btn18);
+
+        btn19.setText("9");
+        pnlTavoli.add(btn19);
+
+        btn20.setText("10");
+        pnlTavoli.add(btn20);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 393, 0);
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipady = 19;
+        gridBagConstraints.weightx = 1.0;
         getContentPane().add(pnlTavoli, gridBagConstraints);
 
         mnuFile.setText("File");
@@ -184,6 +267,26 @@ public class frmHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn10;
+    private javax.swing.JButton btn11;
+    private javax.swing.JButton btn12;
+    private javax.swing.JButton btn13;
+    private javax.swing.JButton btn14;
+    private javax.swing.JButton btn15;
+    private javax.swing.JButton btn16;
+    private javax.swing.JButton btn17;
+    private javax.swing.JButton btn18;
+    private javax.swing.JButton btn19;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn20;
+    private javax.swing.JButton btn3;
+    private javax.swing.JButton btn4;
+    private javax.swing.JButton btn5;
+    private javax.swing.JButton btn6;
+    private javax.swing.JButton btn7;
+    private javax.swing.JButton btn8;
+    private javax.swing.JButton btn9;
     private javax.swing.JMenuItem itmAbout;
     private javax.swing.JMenuItem itmChiudi;
     private javax.swing.JMenuItem itmModifica;
