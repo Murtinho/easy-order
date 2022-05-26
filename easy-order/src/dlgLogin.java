@@ -8,13 +8,14 @@
  * @author aless
  */
 public class dlgLogin extends javax.swing.JDialog {
-
+    frmHome home;
     /**
      * Creates new form frmLogin
      */
-    public dlgLogin(java.awt.Frame parent, boolean modal) {
+    public dlgLogin(frmHome parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        home = parent;
     }
 
     /**
@@ -159,10 +160,12 @@ public class dlgLogin extends javax.swing.JDialog {
 
     private void btnRegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistratiActionPerformed
         this.dispose();
+        home.setLogged(true);
     }//GEN-LAST:event_btnRegistratiActionPerformed
 
     private void btnAccediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccediActionPerformed
         this.dispose();
+        home.setLogged(true);
     }//GEN-LAST:event_btnAccediActionPerformed
 
 

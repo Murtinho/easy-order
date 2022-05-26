@@ -1,4 +1,3 @@
-
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -12,7 +11,8 @@ import java.awt.event.WindowEvent;
  * @author aless
  */
 public class frmHome extends javax.swing.JFrame {
-
+    
+    private boolean logged;
     /**
      * Creates new form Home
      */
@@ -24,9 +24,15 @@ public class frmHome extends javax.swing.JFrame {
         login.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosed(WindowEvent e) {
-                System.exit(0);
+                if(!logged)
+                    System.exit(0);
             }
         });
+    }
+    
+    public void setLogged(boolean logged)
+    {
+        this.logged = logged;
     }
 
     /**
