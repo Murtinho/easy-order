@@ -44,6 +44,8 @@ public class dlgLogin extends javax.swing.JDialog {
         pswPassword1 = new javax.swing.JPasswordField();
         lblTavoli = new javax.swing.JLabel();
         spnTavoli = new javax.swing.JSpinner();
+        lblNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
         btnRegistrati = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -93,12 +95,12 @@ public class dlgLogin extends javax.swing.JDialog {
                 .addComponent(jCheckBox1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAccedi)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Accedi", pnlAccedi);
 
-        pnlCredenziali2.setLayout(new java.awt.GridLayout(3, 2, 0, 10));
+        pnlCredenziali2.setLayout(new java.awt.GridLayout(4, 2, 0, 10));
 
         lblUsername1.setText("Username");
         pnlCredenziali2.add(lblUsername1);
@@ -113,6 +115,10 @@ public class dlgLogin extends javax.swing.JDialog {
 
         spnTavoli.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
         pnlCredenziali2.add(spnTavoli);
+
+        lblNome.setText("Nome ristorante");
+        pnlCredenziali2.add(lblNome);
+        pnlCredenziali2.add(txtNome);
 
         btnRegistrati.setText("Registrati");
         btnRegistrati.addActionListener(new java.awt.event.ActionListener() {
@@ -139,9 +145,9 @@ public class dlgLogin extends javax.swing.JDialog {
             .addGroup(pnlRegistratiLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(pnlCredenziali2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnRegistrati)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Registrati", pnlRegistrati);
@@ -176,6 +182,7 @@ public class dlgLogin extends javax.swing.JDialog {
     private javax.swing.JButton btnRegistrati;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblPassword1;
     private javax.swing.JLabel lblTavoli;
@@ -188,6 +195,7 @@ public class dlgLogin extends javax.swing.JDialog {
     private javax.swing.JPasswordField pswPassword;
     private javax.swing.JPasswordField pswPassword1;
     private javax.swing.JSpinner spnTavoli;
+    private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtUsername1;
     // End of variables declaration//GEN-END:variables
