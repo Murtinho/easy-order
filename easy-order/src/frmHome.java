@@ -18,6 +18,8 @@ public class frmHome extends javax.swing.JFrame {
      */
     public frmHome() {
         initComponents();
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+
         dlgLogin login = new dlgLogin(this, true);
         login.setVisible(true);
         
@@ -51,11 +53,11 @@ public class frmHome extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 916, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 572, Short.MAX_VALUE)
         );
 
         pack();
