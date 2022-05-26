@@ -48,35 +48,62 @@ public class frmHome extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        itmChiudi = new javax.swing.JMenuItem();
+        mnuMenù = new javax.swing.JMenu();
+        itmAggiungi = new javax.swing.JMenuItem();
+        itmModifica = new javax.swing.JMenuItem();
+        itmRimuovi = new javax.swing.JMenuItem();
         mnuAiuto = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        itmAbout = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Easy order");
 
         mnuFile.setText("File");
 
-        jMenuItem1.setMnemonic('c');
-        jMenuItem1.setText("Chiudi");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        itmChiudi.setMnemonic('c');
+        itmChiudi.setText("Chiudi");
+        itmChiudi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                itmChiudiActionPerformed(evt);
             }
         });
-        mnuFile.add(jMenuItem1);
+        mnuFile.add(itmChiudi);
 
         jMenuBar1.add(mnuFile);
 
-        mnuAiuto.setText("Aiuto");
+        mnuMenù.setText("Menù");
 
-        jMenuItem2.setText("Su di noi");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        itmAggiungi.setText("Aggiungi");
+        itmAggiungi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                itmAggiungiActionPerformed(evt);
             }
         });
-        mnuAiuto.add(jMenuItem2);
+        mnuMenù.add(itmAggiungi);
+
+        itmModifica.setText("Modifica");
+        mnuMenù.add(itmModifica);
+
+        itmRimuovi.setText("Rimuovi");
+        itmRimuovi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmRimuoviActionPerformed(evt);
+            }
+        });
+        mnuMenù.add(itmRimuovi);
+
+        jMenuBar1.add(mnuMenù);
+
+        mnuAiuto.setText("Aiuto");
+
+        itmAbout.setText("Su di noi");
+        itmAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmAboutActionPerformed(evt);
+            }
+        });
+        mnuAiuto.add(itmAbout);
 
         jMenuBar1.add(mnuAiuto);
 
@@ -96,14 +123,24 @@ public class frmHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void itmChiudiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmChiudiActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_itmChiudiActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void itmAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAboutActionPerformed
         dlgAbout about = new dlgAbout(this, true);
         about.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_itmAboutActionPerformed
+
+    private void itmAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAggiungiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itmAggiungiActionPerformed
+
+    private void itmRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRimuoviActionPerformed
+        dlgRimuovi rimuovi = new dlgRimuovi(this, true);
+        rimuovi.setVisible(true);
+        
+    }//GEN-LAST:event_itmRimuoviActionPerformed
 
     /**
      * @param args the command line arguments
@@ -142,10 +179,14 @@ public class frmHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem itmAbout;
+    private javax.swing.JMenuItem itmAggiungi;
+    private javax.swing.JMenuItem itmChiudi;
+    private javax.swing.JMenuItem itmModifica;
+    private javax.swing.JMenuItem itmRimuovi;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenu mnuAiuto;
     private javax.swing.JMenu mnuFile;
+    private javax.swing.JMenu mnuMenù;
     // End of variables declaration//GEN-END:variables
 }
