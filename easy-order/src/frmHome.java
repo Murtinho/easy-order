@@ -45,9 +45,13 @@ public class frmHome extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
+        lblNome = new javax.swing.JLabel();
+        pnlTavoli = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
+        itmRistorante = new javax.swing.JMenuItem();
         itmChiudi = new javax.swing.JMenuItem();
         mnuMenù = new javax.swing.JMenu();
         itmModifica = new javax.swing.JMenuItem();
@@ -56,8 +60,32 @@ public class frmHome extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Easy order");
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        lblNome.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        lblNome.setText("Pizzeria San Martino");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        getContentPane().add(lblNome, gridBagConstraints);
+
+        pnlTavoli.setLayout(new java.awt.GridLayout());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 393, 0);
+        getContentPane().add(pnlTavoli, gridBagConstraints);
 
         mnuFile.setText("File");
+
+        itmRistorante.setText("Ristorante");
+        itmRistorante.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itmRistoranteActionPerformed(evt);
+            }
+        });
+        mnuFile.add(itmRistorante);
 
         itmChiudi.setMnemonic('c');
         itmChiudi.setText("Chiudi");
@@ -96,17 +124,6 @@ public class frmHome extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 916, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,6 +141,11 @@ public class frmHome extends javax.swing.JFrame {
         rimuovi.setVisible(true);
         
     }//GEN-LAST:event_itmModificaActionPerformed
+
+    private void itmRistoranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRistoranteActionPerformed
+        dlgRistorante ristorante = new dlgRistorante(this, true);
+        ristorante.setVisible(true);
+    }//GEN-LAST:event_itmRistoranteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,9 +187,12 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmAbout;
     private javax.swing.JMenuItem itmChiudi;
     private javax.swing.JMenuItem itmModifica;
+    private javax.swing.JMenuItem itmRistorante;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblNome;
     private javax.swing.JMenu mnuAiuto;
     private javax.swing.JMenu mnuFile;
     private javax.swing.JMenu mnuMenù;
+    private javax.swing.JPanel pnlTavoli;
     // End of variables declaration//GEN-END:variables
 }
