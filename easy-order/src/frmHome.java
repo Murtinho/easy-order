@@ -50,9 +50,7 @@ public class frmHome extends javax.swing.JFrame {
         mnuFile = new javax.swing.JMenu();
         itmChiudi = new javax.swing.JMenuItem();
         mnuMenù = new javax.swing.JMenu();
-        itmAggiungi = new javax.swing.JMenuItem();
         itmModifica = new javax.swing.JMenuItem();
-        itmRimuovi = new javax.swing.JMenuItem();
         mnuAiuto = new javax.swing.JMenu();
         itmAbout = new javax.swing.JMenuItem();
 
@@ -74,24 +72,13 @@ public class frmHome extends javax.swing.JFrame {
 
         mnuMenù.setText("Menù");
 
-        itmAggiungi.setText("Aggiungi");
-        itmAggiungi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmAggiungiActionPerformed(evt);
-            }
-        });
-        mnuMenù.add(itmAggiungi);
-
         itmModifica.setText("Modifica");
-        mnuMenù.add(itmModifica);
-
-        itmRimuovi.setText("Rimuovi");
-        itmRimuovi.addActionListener(new java.awt.event.ActionListener() {
+        itmModifica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmRimuoviActionPerformed(evt);
+                itmModificaActionPerformed(evt);
             }
         });
-        mnuMenù.add(itmRimuovi);
+        mnuMenù.add(itmModifica);
 
         jMenuBar1.add(mnuMenù);
 
@@ -132,15 +119,11 @@ public class frmHome extends javax.swing.JFrame {
         about.setVisible(true);
     }//GEN-LAST:event_itmAboutActionPerformed
 
-    private void itmAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAggiungiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_itmAggiungiActionPerformed
-
-    private void itmRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRimuoviActionPerformed
-        dlgRimuovi rimuovi = new dlgRimuovi(this, true);
+    private void itmModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmModificaActionPerformed
+        dlgModifica rimuovi = new dlgModifica(this, true);
         rimuovi.setVisible(true);
         
-    }//GEN-LAST:event_itmRimuoviActionPerformed
+    }//GEN-LAST:event_itmModificaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -180,10 +163,8 @@ public class frmHome extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem itmAbout;
-    private javax.swing.JMenuItem itmAggiungi;
     private javax.swing.JMenuItem itmChiudi;
     private javax.swing.JMenuItem itmModifica;
-    private javax.swing.JMenuItem itmRimuovi;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mnuAiuto;
     private javax.swing.JMenu mnuFile;

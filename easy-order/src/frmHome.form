@@ -25,25 +25,12 @@
             <Property name="text" type="java.lang.String" value="Men&#xf9;"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="itmAggiungi">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Aggiungi"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmAggiungiActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmModifica">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Modifica"/>
               </Properties>
-            </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="itmRimuovi">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Rimuovi"/>
-              </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmRimuoviActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmModificaActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
