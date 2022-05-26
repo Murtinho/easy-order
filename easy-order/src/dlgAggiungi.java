@@ -68,9 +68,19 @@ public class dlgAggiungi extends javax.swing.JDialog {
         jPanel1.add(cbxCategoria);
 
         btnAnnulla.setText("Annulla");
+        btnAnnulla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnnullaActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAnnulla);
 
         btnAggiungi.setText("Aggiungi");
+        btnAggiungi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAggiungiActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnAggiungi);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -92,6 +102,14 @@ public class dlgAggiungi extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiungiActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnAggiungiActionPerformed
+
+    private void btnAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnullaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnAnnullaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAggiungi;

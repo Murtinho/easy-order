@@ -105,11 +105,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Annulla"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAnnullaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnAggiungi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Aggiungi"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAggiungiActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
