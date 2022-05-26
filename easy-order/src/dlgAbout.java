@@ -30,6 +30,7 @@ public class dlgAbout extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Su di noi");
 
         jButton1.setText("Chiudi");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
