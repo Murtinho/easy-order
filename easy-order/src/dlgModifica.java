@@ -25,7 +25,6 @@ public class dlgModifica extends javax.swing.JDialog {
     
     private void piattoSelezionato(String piatto)
     {
-        System.out.println(piatto);
         dlgModificaMenù modificaPiatto = new dlgModificaMenù(this, true);
         modificaPiatto.setVisible(true);
     }
