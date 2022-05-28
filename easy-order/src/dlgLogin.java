@@ -8,12 +8,12 @@
  * @author aless
  */
 public class dlgLogin extends javax.swing.JDialog {
-    frmHome home;
+    Main home;
     /**
      * Creates new form frmLogin
      */
-    public dlgLogin(frmHome parent, boolean modal) {
-        super(parent, modal);
+    public dlgLogin(Main parent) {
+        super();
         initComponents();
         home = parent;
     }
