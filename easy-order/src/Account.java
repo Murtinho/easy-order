@@ -1,3 +1,9 @@
+
+import java.io.DataOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -14,9 +20,16 @@ public class Account
     private static int TAVOLI;
     private static String RISTORANTE;
     
-    public static void salvaAccount()
+    public static void salvaAccount() throws FileNotFoundException, IOException
     {
+        DataOutputStream file = new DataOutputStream(new FileOutputStream("account.dat"));
         
+        file.writeChars(USERNAME);
+        file.writeChars(PASSWORD);
+        file.writeInt(TAVOLI);
+        file.writeChars(RISTORANTE);
+        
+        file.close();
     }
 
     public static String getUSERNAME() {
@@ -54,6 +67,4 @@ public class Account
         if(RISTORANTE != null)
             Account.RISTORANTE = RISTORANTE;
     }
-    
-    
 }
