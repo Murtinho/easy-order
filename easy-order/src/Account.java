@@ -24,7 +24,8 @@ public class Account
     }
 
     public static void setUSERNAME(String USERNAME) {
-        Account.USERNAME = USERNAME;
+        if(USERNAME != null)
+            Account.USERNAME = USERNAME;
     }
 
     public static String getPASSWORD() {
@@ -32,7 +33,8 @@ public class Account
     }
 
     public static void setPASSWORD(String PASSWORD) {
-        Account.PASSWORD = PASSWORD;
+        if(PASSWORD != null)
+            Account.PASSWORD = PASSWORD;
     }
 
     public static int getTAVOLI() {
@@ -40,7 +42,8 @@ public class Account
     }
 
     public static void setTAVOLI(int TAVOLI) {
-        Account.TAVOLI = TAVOLI;
+        if(TAVOLI > 0)
+            Account.TAVOLI = TAVOLI;
     }
 
     public static String getRISTORANTE() {
@@ -48,7 +51,8 @@ public class Account
     }
 
     public static void setRISTORANTE(String RISTORANTE) {
-        Account.RISTORANTE = RISTORANTE;
+        if(RISTORANTE != null)
+            Account.RISTORANTE = RISTORANTE;
     }
     
     
