@@ -83,7 +83,7 @@ public class frmHome extends javax.swing.JFrame {
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         lblNome.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        lblNome.setText("Pizzeria san martino");
+        lblNome.setText("Easy order");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
