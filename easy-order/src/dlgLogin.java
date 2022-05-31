@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author aless
@@ -170,8 +171,18 @@ public class dlgLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistratiActionPerformed
-        this.dispose();
-        home.setLogged(true);
+        try
+        {
+            if(txtUsername1.getText().compareTo("") == 0) throw new Exception("Inserisci l'username!");
+            if(pswPassword1.getPassword().length == 0) throw new Exception("Inserisci la password!");
+            if(txtNome.getText().compareTo("") == 0) throw new Exception("Inserisci il nome del ristorante!");
+            Database.register(txtUsername1.getText(), String.valueOf(pswPassword1.getPassword()), (Integer) spnTavoli.getValue(), txtNome.getText());
+            JOptionPane.showMessageDialog(this, "Utente registrato correttamente!", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnRegistratiActionPerformed
 
     private void btnAccediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccediActionPerformed
