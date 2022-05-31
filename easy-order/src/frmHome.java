@@ -28,6 +28,11 @@ public class frmHome extends javax.swing.JFrame {
         
         lblNome.setText(Account.getRISTORANTE());
         
+        for(int i = 0; i < Account.getTAVOLI(); i++)
+        {
+            pnlTavoli.add(new JButton("" + (i + 1)));
+        }
+        
         for(Component comp : pnlTavoli.getComponents())
         {
             if(comp instanceof JButton)
