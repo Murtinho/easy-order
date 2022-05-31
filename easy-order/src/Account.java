@@ -1,6 +1,7 @@
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -46,6 +47,13 @@ public class Account
         Database.login(user, pass);
         
         file.close();
+    }
+    
+    public static void logout()
+    {
+        File account = new File("account.dat");
+        
+        account.delete();
     }
     
     public static void setAccount(ResultSet account) throws SQLException

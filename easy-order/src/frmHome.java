@@ -81,6 +81,7 @@ public class frmHome extends javax.swing.JFrame {
         btn19 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
         itmChiudi = new javax.swing.JMenuItem();
         mnuMenù = new javax.swing.JMenu();
         itmModifica = new javax.swing.JMenuItem();
@@ -170,6 +171,14 @@ public class frmHome extends javax.swing.JFrame {
 
         mnuFile.setText("File");
 
+        jMenuItem1.setText("Logout");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        mnuFile.add(jMenuItem1);
+
         itmChiudi.setMnemonic('c');
         itmChiudi.setText("Chiudi");
         itmChiudi.addActionListener(new java.awt.event.ActionListener() {
@@ -240,6 +249,13 @@ public class frmHome extends javax.swing.JFrame {
         dlgRistorante ristorante = new dlgRistorante(this, true);
         ristorante.setVisible(true);
     }//GEN-LAST:event_itmRistoranteActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        Account.logout();
+        
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn1;
     private javax.swing.JButton btn10;
@@ -266,6 +282,7 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JMenuItem itmModifica;
     private javax.swing.JMenuItem itmRistorante;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lblNome;
     private javax.swing.JMenu mnuAiuto;
     private javax.swing.JMenu mnuFile;
