@@ -22,6 +22,7 @@ public class Account
     private static String PASSWORD;
     private static int TAVOLI;
     private static String RISTORANTE;
+    private static boolean logged;
     
     public static void salvaAccount() throws FileNotFoundException, IOException
     {
@@ -35,10 +36,14 @@ public class Account
     
     public static void caricaAccount() throws FileNotFoundException, IOException
     {
+        String user, pass;
+        
         DataInputStream file = new DataInputStream(new FileInputStream("account.dat"));
         
-        setUSERNAME(file.readUTF());
-        setPASSWORD(file.readUTF());
+        user = file.readUTF();
+        pass = file.readUTF();
+        
+        Database.login(user, pass);
         
         file.close();
     }
@@ -49,6 +54,7 @@ public class Account
         setPASSWORD(account.getNString("password"));
         setTAVOLI(account.getInt("tavoli"));
         setRISTORANTE(account.getNString("ristorante"));
+        logged = true;
     }
 
     public static String getUSERNAME() {
@@ -85,5 +91,9 @@ public class Account
     public static void setRISTORANTE(String RISTORANTE) {
         if(RISTORANTE != null)
             Account.RISTORANTE = RISTORANTE;
+    }
+    
+    public static boolean isLogged() {
+        return logged;
     }
 }

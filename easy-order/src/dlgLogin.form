@@ -60,7 +60,7 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnAccedi" min="-2" pref="77" max="-2" attributes="0"/>
-                          <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                          <Component id="cbxRicordami" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                   </Group>
@@ -72,7 +72,7 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Component id="pnlCredenziali" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="cbxRicordami" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="btnAccedi" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="42" max="32767" attributes="0"/>
@@ -113,7 +113,7 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAccediActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+            <Component class="javax.swing.JCheckBox" name="cbxRicordami">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ricordami"/>
               </Properties>
