@@ -24,10 +24,13 @@ public class Account
     {
         DataOutputStream file = new DataOutputStream(new FileOutputStream("account.dat"));
         
-        file.writeChars(USERNAME);
-        file.writeChars(PASSWORD);
+        file.writeUTF(USERNAME);
+        file.writeUTF(PASSWORD);
         file.writeInt(TAVOLI);
-        file.writeChars(RISTORANTE);
+        file.writeUTF(RISTORANTE);
+        
+        file.close();
+    }
         
         file.close();
     }
