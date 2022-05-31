@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -40,6 +41,14 @@ public class Account
         setPASSWORD(file.readUTF());
         
         file.close();
+    }
+    
+    public static void setAccount(ResultSet account) throws SQLException
+    {
+        setUSERNAME(account.getNString("username"));
+        setPASSWORD(account.getNString("password"));
+        setTAVOLI(account.getInt("tavoli"));
+        setRISTORANTE(account.getNString("ristorante"));
     }
 
     public static String getUSERNAME() {
