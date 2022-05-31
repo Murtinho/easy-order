@@ -26,6 +26,8 @@ public class frmHome extends javax.swing.JFrame {
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         
+        lblNome.setText(Account.getRISTORANTE());
+        
         for(Component comp : pnlTavoli.getComponents())
         {
             if(comp instanceof JButton)
