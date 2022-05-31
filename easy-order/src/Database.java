@@ -39,17 +39,24 @@ public class Database
         }
     }
     
-    public static void register(String username, String password, int tavoli, String ristorante)
+    public static void register(String username, String password, int tavoli, String ristorante) throws Exception
     {
         try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO users (username, password, tavoli, ristorante) VALUES (?, ?, ?, ?)");)
+            PreparedStatement inserisci = conn.prepareStatement("INSERT INTO users (username, password, tavoli, ristorante) VALUES (?, ?, ?, ?)");
+            PreparedStatement controlla = conn.prepareStatement("SELECT username FROM users WHERE username = ?"))
         {
-            pstmt.setString(1, username);
-            pstmt.setString(2, password);
-            pstmt.setInt(3, tavoli);
-            pstmt.setString(4, ristorante);
+            controlla.setString(1, username);
+            if(controlla.executeQuery().next()) //Se esiste già un utente con questo username
+            {
+                throw new Exception("Username già in uso");
+            }
             
-            pstmt.executeUpdate();
+            inserisci.setString(1, username);
+            inserisci.setString(2, password);
+            inserisci.setInt(3, tavoli);
+            inserisci.setString(4, ristorante);
+            
+            inserisci.executeUpdate();
         }
         catch(SQLException ex)
         {
