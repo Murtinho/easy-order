@@ -1,5 +1,7 @@
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,6 +33,15 @@ public class Account
         
         file.close();
     }
+    
+    public static void caricaAccount() throws FileNotFoundException, IOException
+    {
+        DataInputStream file = new DataInputStream(new FileInputStream("account.dat"));
+        
+        setUSERNAME(file.readUTF());
+        setPASSWORD(file.readUTF());
+        setTAVOLI(file.readInt());
+        setRISTORANTE(file.readUTF());
         
         file.close();
     }
