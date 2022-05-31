@@ -28,8 +28,6 @@ public class Account
         
         file.writeUTF(USERNAME);
         file.writeUTF(PASSWORD);
-        file.writeInt(TAVOLI);
-        file.writeUTF(RISTORANTE);
         
         file.close();
     }
@@ -40,8 +38,6 @@ public class Account
         
         setUSERNAME(file.readUTF());
         setPASSWORD(file.readUTF());
-        setTAVOLI(file.readInt());
-        setRISTORANTE(file.readUTF());
         
         file.close();
     }
