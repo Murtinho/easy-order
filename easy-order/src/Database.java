@@ -63,4 +63,20 @@ public class Database
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static void update()
+    {
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement("UPDATE users SET tavoli = ?, ristorante = ? WHERE username = ?;");)
+        {
+            pstmt.setInt(1, Account.getTAVOLI());
+            pstmt.setString(2, Account.getRISTORANTE());
+            pstmt.setString(3, Account.getUSERNAME());
+            pstmt.executeUpdate();
+        }
+        catch(SQLException ex)
+        {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
