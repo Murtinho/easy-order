@@ -8,13 +8,19 @@
  * @author aless
  */
 public class dlgRistorante extends javax.swing.JDialog {
-
+    frmHome p;
     /**
      * Creates new form dlgRistorante
      */
-    public dlgRistorante(java.awt.Frame parent, boolean modal) {
+    public dlgRistorante(frmHome parent, boolean modal)
+    {
         super(parent, modal);
         initComponents();
+        username.setText(Account.getUSERNAME());
+        spnTavoli.setValue(Account.getTAVOLI());
+        txtRistorante.setText(Account.getRISTORANTE());
+        
+        p = parent;
     }
 
     /**
@@ -54,12 +60,26 @@ public class dlgRistorante extends javax.swing.JDialog {
         spnTavoli.setModel(new javax.swing.SpinnerNumberModel(1, 1, 100, 1));
         pnlDati.add(spnTavoli);
 
+        lblRistorante.setText("Nome ristorante");
+        pnlDati.add(lblRistorante);
+        pnlDati.add(txtRistorante);
+
         pnlBottoni.setLayout(new java.awt.GridLayout(1, 2, 10, 0));
 
         btnSalva.setText("Salva");
+        btnSalva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvaActionPerformed(evt);
+            }
+        });
         pnlBottoni.add(btnSalva);
 
         btnChiudi.setText("Chiudi");
+        btnChiudi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnChiudiActionPerformed(evt);
+            }
+        });
         pnlBottoni.add(btnChiudi);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -85,6 +105,21 @@ public class dlgRistorante extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnChiudiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChiudiActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnChiudiActionPerformed
+
+    private void btnSalvaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvaActionPerformed
+        if((Integer) spnTavoli.getValue() != Account.getTAVOLI())
+            Account.setTAVOLI((Integer) spnTavoli.getValue());
+        if(!txtRistorante.getText().equals(Account.getRISTORANTE()))
+            Account.setRISTORANTE(txtRistorante.getText());
+        
+        Database.update();
+        p.refresh();
+    }//GEN-LAST:event_btnSalvaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChiudi;
     private javax.swing.JButton btnSalva;

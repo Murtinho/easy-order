@@ -26,8 +26,14 @@ public class frmHome extends javax.swing.JFrame {
         initComponents();
         setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         
+        refresh();
+    }
+    
+    public void refresh()
+    {
         lblNome.setText(Account.getRISTORANTE());
         
+        pnlTavoli.removeAll();
         for(int i = 0; i < Account.getTAVOLI(); i++)
         {
             pnlTavoli.add(new JButton("" + (i + 1)));
@@ -48,11 +54,6 @@ public class frmHome extends javax.swing.JFrame {
                 });
             }
         }
-    }
-    
-    public void setLogged(boolean logged)
-    {
-        this.logged = logged;
     }
 
     /**

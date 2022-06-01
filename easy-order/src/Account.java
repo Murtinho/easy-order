@@ -62,6 +62,7 @@ public class Account
         setPASSWORD(account.getNString("password"));
         setTAVOLI(account.getInt("tavoli"));
         setRISTORANTE(account.getNString("ristorante"));
+        
         logged = true;
     }
 
