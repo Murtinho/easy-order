@@ -79,4 +79,33 @@ public class Database
             Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static void addPiatto(Piatto p) throws Exception
+    {
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement inserisci = conn.prepareStatement("INSERT INTO menu (piatto, user, descrizione, allergeni, categoria, prezzo) VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement controlla = conn.prepareStatement("SELECT piatto FROM menu WHERE piatto = ? AND user = ?"))
+        {
+            controlla.setString(1, p.getNome());
+            controlla.setString(2, Account.getUSERNAME());
+            
+            if(controlla.executeQuery().next()) //Se esiste già un utente con questo username
+            {
+                throw new Exception("Piatto già inserito!");
+            }
+            
+            inserisci.setString(1, p.getNome());
+            inserisci.setString(2, Account.getUSERNAME());
+            inserisci.setString(3, p.getDescrizione());
+            inserisci.setString(4, p.getAllergeni());
+            inserisci.setString(5, p.getCategoria());
+            inserisci.setInt(6, p.getPrezzo());
+            
+            inserisci.executeUpdate();
+        }
+        catch(SQLException ex)
+        {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
