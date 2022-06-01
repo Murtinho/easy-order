@@ -1,3 +1,8 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
@@ -34,7 +39,7 @@ public class dlgAggiungi extends javax.swing.JDialog {
         lblAllergeni = new javax.swing.JLabel();
         txtAllergeni = new javax.swing.JTextField();
         lblPrezzo = new javax.swing.JLabel();
-        txtPrezzo = new javax.swing.JTextField();
+        spnPrezzo = new javax.swing.JSpinner();
         lblCategoria = new javax.swing.JLabel();
         cbxCategoria = new javax.swing.JComboBox<>();
         btnAnnulla = new javax.swing.JButton();
@@ -59,7 +64,9 @@ public class dlgAggiungi extends javax.swing.JDialog {
 
         lblPrezzo.setText("Prezzo");
         jPanel1.add(lblPrezzo);
-        jPanel1.add(txtPrezzo);
+
+        spnPrezzo.setModel(new javax.swing.SpinnerNumberModel(10, 1, 99, 1));
+        jPanel1.add(spnPrezzo);
 
         lblCategoria.setText("Categoria");
         jPanel1.add(lblCategoria);
@@ -132,9 +139,9 @@ public class dlgAggiungi extends javax.swing.JDialog {
     private javax.swing.JLabel lblDescrizione;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPrezzo;
+    private javax.swing.JSpinner spnPrezzo;
     private javax.swing.JTextField txtAllergeni;
     private javax.swing.JTextField txtDescrizione;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtPrezzo;
     // End of variables declaration//GEN-END:variables
 }
