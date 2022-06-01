@@ -74,7 +74,7 @@ public class frmHome extends javax.swing.JFrame {
         mnuMenù = new javax.swing.JMenu();
         itmModifica = new javax.swing.JMenuItem();
         btnImpostazioni = new javax.swing.JMenu();
-        itmRistorante = new javax.swing.JMenuItem();
+        itmAccount = new javax.swing.JMenuItem();
         mnuAiuto = new javax.swing.JMenu();
         itmAbout = new javax.swing.JMenuItem();
 
@@ -89,7 +89,7 @@ public class frmHome extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         getContentPane().add(lblNome, gridBagConstraints);
 
-        pnlTavoli.setLayout(new java.awt.GridLayout(2, 10, 10, 10));
+        pnlTavoli.setLayout(new java.awt.GridLayout(4, 10, 10, 10));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -134,13 +134,13 @@ public class frmHome extends javax.swing.JFrame {
 
         btnImpostazioni.setText("Impostazioni");
 
-        itmRistorante.setText("Ristorante");
-        itmRistorante.addActionListener(new java.awt.event.ActionListener() {
+        itmAccount.setText("Account");
+        itmAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itmRistoranteActionPerformed(evt);
+                itmAccountActionPerformed(evt);
             }
         });
-        btnImpostazioni.add(itmRistorante);
+        btnImpostazioni.add(itmAccount);
 
         jMenuBar1.add(btnImpostazioni);
 
@@ -175,10 +175,10 @@ public class frmHome extends javax.swing.JFrame {
         rimuovi.setVisible(true);
     }//GEN-LAST:event_itmModificaActionPerformed
 
-    private void itmRistoranteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmRistoranteActionPerformed
+    private void itmAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itmAccountActionPerformed
         dlgRistorante ristorante = new dlgRistorante(this, true);
         ristorante.setVisible(true);
-    }//GEN-LAST:event_itmRistoranteActionPerformed
+    }//GEN-LAST:event_itmAccountActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         Account.logout();
@@ -189,9 +189,9 @@ public class frmHome extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu btnImpostazioni;
     private javax.swing.JMenuItem itmAbout;
+    private javax.swing.JMenuItem itmAccount;
     private javax.swing.JMenuItem itmChiudi;
     private javax.swing.JMenuItem itmModifica;
-    private javax.swing.JMenuItem itmRistorante;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JLabel lblNome;

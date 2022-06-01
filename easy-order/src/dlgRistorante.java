@@ -26,22 +26,27 @@ public class dlgRistorante extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         pnlDati = new javax.swing.JPanel();
         lblUsername = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
+        username = new javax.swing.JLabel();
         lblTavoli = new javax.swing.JLabel();
         spnTavoli = new javax.swing.JSpinner();
+        lblRistorante = new javax.swing.JLabel();
+        txtRistorante = new javax.swing.JTextField();
         pnlBottoni = new javax.swing.JPanel();
         btnSalva = new javax.swing.JButton();
         btnChiudi = new javax.swing.JButton();
 
+        jTextField1.setText("jTextField1");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        pnlDati.setLayout(new java.awt.GridLayout(2, 2, 10, 10));
+        pnlDati.setLayout(new java.awt.GridLayout(3, 2, 10, 10));
 
         lblUsername.setText("Username");
         pnlDati.add(lblUsername);
-        pnlDati.add(txtUsername);
+        pnlDati.add(username);
 
         lblTavoli.setText("Numero tavoli");
         pnlDati.add(lblTavoli);
@@ -63,9 +68,9 @@ public class dlgRistorante extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlDati, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pnlBottoni, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnlDati, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlBottoni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -73,7 +78,7 @@ public class dlgRistorante extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(pnlDati, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addComponent(pnlBottoni, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -83,11 +88,14 @@ public class dlgRistorante extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChiudi;
     private javax.swing.JButton btnSalva;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblRistorante;
     private javax.swing.JLabel lblTavoli;
     private javax.swing.JLabel lblUsername;
     private javax.swing.JPanel pnlBottoni;
     private javax.swing.JPanel pnlDati;
     private javax.swing.JSpinner spnTavoli;
-    private javax.swing.JTextField txtUsername;
+    private javax.swing.JTextField txtRistorante;
+    private javax.swing.JLabel username;
     // End of variables declaration//GEN-END:variables
 }

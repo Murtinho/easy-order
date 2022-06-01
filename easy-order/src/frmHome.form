@@ -48,12 +48,12 @@
             <Property name="text" type="java.lang.String" value="Impostazioni"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="itmRistorante">
+            <MenuItem class="javax.swing.JMenuItem" name="itmAccount">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ristorante"/>
+                <Property name="text" type="java.lang.String" value="Account"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmRistoranteActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmAccountActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -123,7 +123,7 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="10"/>
         <Property name="horizontalGap" type="int" value="10"/>
-        <Property name="rows" type="int" value="2"/>
+        <Property name="rows" type="int" value="4"/>
         <Property name="verticalGap" type="int" value="10"/>
       </Layout>
     </Container>
