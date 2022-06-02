@@ -37,7 +37,7 @@ public class dlgModifica extends javax.swing.JDialog {
        
         
         DefaultTreeModel model = new DefaultTreeModel(root);
-        treMenù.setModel(model);
+        treMenu.setModel(model);
         
         for(Piatto p : menu)
         {
@@ -68,9 +68,9 @@ public class dlgModifica extends javax.swing.JDialog {
         if(!bevande.isLeaf())
             root.add(bevande);
         
-        for (int i = 0; i < treMenù.getRowCount(); i++)
+        for (int i = 0; i < treMenu.getRowCount(); i++)
         {
-            treMenù.expandRow(i);
+            treMenu.expandRow(i);
         }
     }
     
@@ -97,21 +97,21 @@ public class dlgModifica extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        scrMenù = new javax.swing.JScrollPane();
-        treMenù = new javax.swing.JTree();
+        scrMenu = new javax.swing.JScrollPane();
+        treMenu = new javax.swing.JTree();
         btnAggiungi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menù");
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
-        treMenù.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        scrMenù.setViewportView(treMenù);
-        treMenù.addMouseListener(
+        treMenu.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        scrMenu.setViewportView(treMenu);
+        treMenu.addMouseListener(
             new MouseAdapter() {
                 public void mousePressed(MouseEvent e) {
-                    DefaultMutableTreeNode node = (DefaultMutableTreeNode) treMenù.getLastSelectedPathComponent();
-                    if(treMenù.getRowForLocation(e.getX(), e.getY()) != -1)
+                    DefaultMutableTreeNode node = (DefaultMutableTreeNode) treMenu.getLastSelectedPathComponent();
+                    if(treMenu.getRowForLocation(e.getX(), e.getY()) != -1)
                     if(e.getClickCount() == 2 && node.isLeaf())
                     piattoSelezionato(node.toString());
                 }
@@ -131,7 +131,7 @@ public class dlgModifica extends javax.swing.JDialog {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrMenù, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addComponent(scrMenu, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnAggiungi)
                 .addContainerGap())
@@ -142,7 +142,7 @@ public class dlgModifica extends javax.swing.JDialog {
                 .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnAggiungi)
-                    .addComponent(scrMenù, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(scrMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9))
         );
 
@@ -156,7 +156,7 @@ public class dlgModifica extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAggiungi;
-    private javax.swing.JScrollPane scrMenù;
-    private javax.swing.JTree treMenù;
+    private javax.swing.JScrollPane scrMenu;
+    private javax.swing.JTree treMenu;
     // End of variables declaration//GEN-END:variables
 }

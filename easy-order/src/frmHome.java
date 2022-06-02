@@ -72,7 +72,7 @@ public class frmHome extends javax.swing.JFrame {
         mnuFile = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         itmChiudi = new javax.swing.JMenuItem();
-        mnuMenù = new javax.swing.JMenu();
+        mnuMenu = new javax.swing.JMenu();
         itmModifica = new javax.swing.JMenuItem();
         btnImpostazioni = new javax.swing.JMenu();
         itmAccount = new javax.swing.JMenuItem();
@@ -121,7 +121,7 @@ public class frmHome extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuFile);
 
-        mnuMenù.setText("Menù");
+        mnuMenu.setText("Menù");
 
         itmModifica.setText("Modifica");
         itmModifica.addActionListener(new java.awt.event.ActionListener() {
@@ -129,9 +129,9 @@ public class frmHome extends javax.swing.JFrame {
                 itmModificaActionPerformed(evt);
             }
         });
-        mnuMenù.add(itmModifica);
+        mnuMenu.add(itmModifica);
 
-        jMenuBar1.add(mnuMenù);
+        jMenuBar1.add(mnuMenu);
 
         btnImpostazioni.setText("Impostazioni");
 
@@ -198,7 +198,7 @@ public class frmHome extends javax.swing.JFrame {
     private javax.swing.JLabel lblNome;
     private javax.swing.JMenu mnuAiuto;
     private javax.swing.JMenu mnuFile;
-    private javax.swing.JMenu mnuMenù;
+    private javax.swing.JMenu mnuMenu;
     private javax.swing.JPanel pnlTavoli;
     // End of variables declaration//GEN-END:variables
 }

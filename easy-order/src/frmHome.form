@@ -28,7 +28,7 @@
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="mnuMen&#xf9;">
+        <Menu class="javax.swing.JMenu" name="mnuMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Men&#xf9;"/>
           </Properties>
