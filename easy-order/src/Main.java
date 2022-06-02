@@ -1,6 +1,7 @@
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -26,19 +27,8 @@ public class Main
                     break;
                 }
             }
-        }
-        catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex)
-        {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        try
-        {
-            Account.caricaAccount();
-        }
-        catch (IOException ex)
-        {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Main.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         if(!Account.isLogged())
