@@ -57,7 +57,7 @@
         <Component class="javax.swing.JTree" name="treMen&#xf9;">
           <Properties>
             <Property name="model" type="javax.swing.tree.TreeModel" editor="org.netbeans.modules.form.editors2.TreeModelEditor">
-              <TreeModel code="Men&#xf9;&#xa; Antipasti&#xa;  Gnocco fritto&#xa;  Tagliere di salumi&#xa; Primi&#xa;  Pasta alla carbonara&#xa;  Pasta allo scoglio&#xa;  Pizzoccheri&#xa; Secondi&#xa;  Tagliata di manzo&#xa;  Stinco arrosto&#xa; Pizze&#xa;  Margherita&#xa;  Marinara&#xa;  Americana&#xa; Dessert&#xa;  Tiramis&#xf9;&#xa;  Gelato&#xa; Bevande&#xa;  Acqua&#xa;  Coca-Cola&#xa;  Birra&#xa;  Caff&#xe8;"/>
+              <TreeModel code=""/>
             </Property>
           </Properties>
           <AuxValues>

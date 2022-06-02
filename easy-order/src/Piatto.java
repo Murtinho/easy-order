@@ -9,6 +9,7 @@
  */
 public class Piatto
 {
+    private int id;
     private String nome;
     private String descrizione;
     private String allergeni;
@@ -22,6 +23,19 @@ public class Piatto
         this.allergeni = allergeni;
         this.categoria = categoria;
         this.prezzo = prezzo;
+    }
+    
+    public Piatto(int id, String nome, String descrizione, String allergeni, String categoria, int prezzo)
+    {
+        this(nome, descrizione, allergeni, categoria, prezzo);
+        
+        this.id = id;
+    }
+    
+    public Piatto(String nome, String categoria)
+    {
+        this.nome = nome;
+        this.categoria = categoria;
     }
 
     public String getNome() {
@@ -63,4 +77,14 @@ public class Piatto
     public void setPrezzo(int prezzo) {
         this.prezzo = prezzo;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    
 }

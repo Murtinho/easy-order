@@ -1,3 +1,9 @@
+
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
@@ -8,13 +14,23 @@
  * @author aless
  */
 public class dlgModificaMenù extends javax.swing.JDialog {
-
+    Piatto p;
+    dlgModifica m;
     /**
      * Creates new form dlgModificaPiatto
      */
-    public dlgModificaMenù(java.awt.Dialog parent, boolean modal) {
+    public dlgModificaMenù(dlgModifica parent, boolean modal, Piatto p) {
         super(parent, modal);
         initComponents();
+        
+        this.m = parent;
+        this.p = p;
+        
+        txtNome.setText(p.getNome());
+        txtDescrizione.setText(p.getDescrizione());
+        txtAllergeni.setText(p.getAllergeni());
+        spnPrezzo.setValue(p.getPrezzo());
+        cbxCategoria.setSelectedItem(p.getCategoria());
     }
 
     /**
@@ -34,9 +50,9 @@ public class dlgModificaMenù extends javax.swing.JDialog {
         lblAllergeni = new javax.swing.JLabel();
         txtAllergeni = new javax.swing.JTextField();
         lblPrezzo = new javax.swing.JLabel();
-        txtPrezzo = new javax.swing.JTextField();
+        spnPrezzo = new javax.swing.JSpinner();
         jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxCategoria = new javax.swing.JComboBox<>();
         jPanel2 = new javax.swing.JPanel();
         btnAnnulla = new javax.swing.JButton();
         btnModifica = new javax.swing.JButton();
@@ -60,23 +76,40 @@ public class dlgModificaMenù extends javax.swing.JDialog {
 
         lblPrezzo.setText("Prezzo");
         jPanel1.add(lblPrezzo);
-        jPanel1.add(txtPrezzo);
+
+        spnPrezzo.setModel(new javax.swing.SpinnerNumberModel(2, 1, 99, 1));
+        jPanel1.add(spnPrezzo);
 
         jLabel1.setText("Categoria");
         jPanel1.add(jLabel1);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antipasti", "Primi", "Secondi", "Pizze", "Dessert", "Bevande" }));
-        jPanel1.add(jComboBox1);
+        cbxCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Antipasti", "Primi", "Secondi", "Pizze", "Dessert", "Bevande" }));
+        jPanel1.add(cbxCategoria);
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 3, 10, 0));
 
         btnAnnulla.setText("Annulla");
+        btnAnnulla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnnullaActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnAnnulla);
 
         btnModifica.setText("Modifica");
+        btnModifica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificaActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnModifica);
 
         btnRimuovi.setText("Rimuovi");
+        btnRimuovi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRimuoviActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnRimuovi);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,11 +136,40 @@ public class dlgModificaMenù extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnullaActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnAnnullaActionPerformed
+
+    private void btnModificaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificaActionPerformed
+        try
+        {
+            p.setNome(txtNome.getText());
+            p.setDescrizione(txtDescrizione.getText());
+            p.setAllergeni(txtAllergeni.getText());
+            p.setCategoria(cbxCategoria.getSelectedItem().toString());
+            p.setPrezzo((Integer) spnPrezzo.getValue());
+            
+            Database.modificaPiatto(p);
+            m.aggiornaMenu();
+            this.dispose();
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnModificaActionPerformed
+
+    private void btnRimuoviActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRimuoviActionPerformed
+        Database.removePiatto(p.getId());
+        m.aggiornaMenu();
+        this.dispose();
+    }//GEN-LAST:event_btnRimuoviActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAnnulla;
     private javax.swing.JButton btnModifica;
     private javax.swing.JButton btnRimuovi;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cbxCategoria;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -115,9 +177,9 @@ public class dlgModificaMenù extends javax.swing.JDialog {
     private javax.swing.JLabel lblDescrizione;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPrezzo;
+    private javax.swing.JSpinner spnPrezzo;
     private javax.swing.JTextField txtAllergeni;
     private javax.swing.JTextField txtDescrizione;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtPrezzo;
     // End of variables declaration//GEN-END:variables
 }

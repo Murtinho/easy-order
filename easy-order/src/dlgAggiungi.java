@@ -13,13 +13,14 @@ import javax.swing.JOptionPane;
  * @author aless
  */
 public class dlgAggiungi extends javax.swing.JDialog {
-
+    dlgModifica m;
     /**
      * Creates new form dlgAggiungi
      */
-    public dlgAggiungi(java.awt.Dialog parent, boolean modal) {
+    public dlgAggiungi(dlgModifica parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.m = parent;
     }
 
     /**
@@ -118,6 +119,7 @@ public class dlgAggiungi extends javax.swing.JDialog {
             
             Piatto p = new Piatto(txtNome.getText(), txtDescrizione.getText(), txtAllergeni.getText(), cbxCategoria.getSelectedItem().toString(), (Integer) spnPrezzo.getValue());
             Database.addPiatto(p);
+            m.aggiornaMenu();
             this.dispose();
         }
         catch (Exception ex)
