@@ -84,7 +84,7 @@ public class dlgModifica extends javax.swing.JDialog {
     {
         Piatto p = Database.getPiatto(piatto);
         
-        dlgModificaMenù modificaPiatto = new dlgModificaMenù(this, true, p);
+        dlgModificaMenu modificaPiatto = new dlgModificaMenu(this, true, p);
         modificaPiatto.setVisible(true);
     }
 

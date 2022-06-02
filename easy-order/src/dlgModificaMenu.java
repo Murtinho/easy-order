@@ -13,13 +13,13 @@ import javax.swing.JOptionPane;
  *
  * @author aless
  */
-public class dlgModificaMenù extends javax.swing.JDialog {
+public class dlgModificaMenu extends javax.swing.JDialog {
     Piatto p;
     dlgModifica m;
     /**
      * Creates new form dlgModificaPiatto
      */
-    public dlgModificaMenù(dlgModifica parent, boolean modal, Piatto p) {
+    public dlgModificaMenu(dlgModifica parent, boolean modal, Piatto p) {
         super(parent, modal);
         initComponents();
         
