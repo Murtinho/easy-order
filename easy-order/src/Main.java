@@ -27,24 +27,42 @@ public class Main
                 }
             }
         }
-        catch (Exception e)
+        catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex)
         {
-            
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        dlgLogin login = new dlgLogin(main);
-        login.setVisible(true);
+        try
+        {
+            Account.caricaAccount();
+        }
+        catch (IOException ex)
+        {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-        login.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosed(WindowEvent e) {
-                if(!main.isLogged())
-                    System.exit(0);
-                
-                frmHome home = new frmHome();
-                home.setVisible(true);
-            }
-        });
+        if(!Account.isLogged())
+        {
+            dlgLogin login = new dlgLogin(main);
+            login.setVisible(true);
+
+            login.addWindowListener(new WindowAdapter()
+            {
+                @Override
+                public void windowClosed(WindowEvent e) {
+                    if(!Account.isLogged())
+                        System.exit(0);
+
+                    frmHome home = new frmHome();
+                    home.setVisible(true);
+                }
+            });
+        }
+        else
+        {
+            frmHome home = new frmHome();
+            home.setVisible(true);
+        }
     }
     
     public void setLogged(boolean logged)

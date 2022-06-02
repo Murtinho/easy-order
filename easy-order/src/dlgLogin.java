@@ -2,7 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-
+import java.io.IOException;
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 /**
  *
  * @author aless
@@ -35,7 +39,7 @@ public class dlgLogin extends javax.swing.JDialog {
         lblPassword = new javax.swing.JLabel();
         pswPassword = new javax.swing.JPasswordField();
         btnAccedi = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        cbxRicordami = new javax.swing.JCheckBox();
         pnlRegistrati = new javax.swing.JPanel();
         pnlCredenziali2 = new javax.swing.JPanel();
         lblUsername1 = new javax.swing.JLabel();
@@ -69,7 +73,7 @@ public class dlgLogin extends javax.swing.JDialog {
             }
         });
 
-        jCheckBox1.setText("Ricordami");
+        cbxRicordami.setText("Ricordami");
 
         javax.swing.GroupLayout pnlAccediLayout = new javax.swing.GroupLayout(pnlAccedi);
         pnlAccedi.setLayout(pnlAccediLayout);
@@ -83,7 +87,7 @@ public class dlgLogin extends javax.swing.JDialog {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(pnlAccediLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAccedi, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCheckBox1))
+                    .addComponent(cbxRicordami))
                 .addGap(117, 117, 117))
         );
         pnlAccediLayout.setVerticalGroup(
@@ -92,7 +96,7 @@ public class dlgLogin extends javax.swing.JDialog {
                 .addGap(14, 14, 14)
                 .addComponent(pnlCredenziali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
+                .addComponent(cbxRicordami)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAccedi)
                 .addContainerGap(42, Short.MAX_VALUE))
@@ -167,20 +171,45 @@ public class dlgLogin extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistratiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistratiActionPerformed
-        this.dispose();
-        home.setLogged(true);
+        try
+        {
+            if(txtUsername1.getText().compareTo("") == 0) throw new Exception("Inserisci l'username!");
+            if(pswPassword1.getPassword().length == 0) throw new Exception("Inserisci la password!");
+            if(txtNome.getText().compareTo("") == 0) throw new Exception("Inserisci il nome del ristorante!");
+            Database.register(txtUsername1.getText(), String.valueOf(pswPassword1.getPassword()), (Integer) spnTavoli.getValue(), txtNome.getText());
+            JOptionPane.showMessageDialog(this, "Utente registrato correttamente!", "Info", JOptionPane.INFORMATION_MESSAGE);
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnRegistratiActionPerformed
 
     private void btnAccediActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAccediActionPerformed
-        this.dispose();
-        home.setLogged(true);
+        Database.login(txtUsername.getText(), String.valueOf(pswPassword.getPassword()));
+        
+        
+        if(cbxRicordami.isSelected())
+        {
+            try
+            {
+                Account.salvaAccount();
+            }
+            catch (IOException ex)
+            {
+                Logger.getLogger(dlgLogin.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        if(Account.isLogged())
+            this.dispose();        
     }//GEN-LAST:event_btnAccediActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAccedi;
     private javax.swing.JButton btnRegistrati;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox cbxRicordami;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPassword;

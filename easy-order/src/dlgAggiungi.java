@@ -1,3 +1,8 @@
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
@@ -8,13 +13,14 @@
  * @author aless
  */
 public class dlgAggiungi extends javax.swing.JDialog {
-
+    dlgModifica m;
     /**
      * Creates new form dlgAggiungi
      */
-    public dlgAggiungi(java.awt.Dialog parent, boolean modal) {
+    public dlgAggiungi(dlgModifica parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.m = parent;
     }
 
     /**
@@ -34,7 +40,7 @@ public class dlgAggiungi extends javax.swing.JDialog {
         lblAllergeni = new javax.swing.JLabel();
         txtAllergeni = new javax.swing.JTextField();
         lblPrezzo = new javax.swing.JLabel();
-        txtPrezzo = new javax.swing.JTextField();
+        spnPrezzo = new javax.swing.JSpinner();
         lblCategoria = new javax.swing.JLabel();
         cbxCategoria = new javax.swing.JComboBox<>();
         btnAnnulla = new javax.swing.JButton();
@@ -59,7 +65,9 @@ public class dlgAggiungi extends javax.swing.JDialog {
 
         lblPrezzo.setText("Prezzo");
         jPanel1.add(lblPrezzo);
-        jPanel1.add(txtPrezzo);
+
+        spnPrezzo.setModel(new javax.swing.SpinnerNumberModel(10, 1, 99, 1));
+        jPanel1.add(spnPrezzo);
 
         lblCategoria.setText("Categoria");
         jPanel1.add(lblCategoria);
@@ -104,7 +112,20 @@ public class dlgAggiungi extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiungiActionPerformed
-        this.dispose();
+        try
+        {
+            if(txtNome.getText().equals(""))
+                throw new Exception("Inserisci il nome del piatto!");
+            
+            Piatto p = new Piatto(txtNome.getText(), txtDescrizione.getText(), txtAllergeni.getText(), cbxCategoria.getSelectedItem().toString(), (Integer) spnPrezzo.getValue());
+            Database.addPiatto(p);
+            m.aggiornaMenu();
+            this.dispose();
+        }
+        catch (Exception ex)
+        {
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAggiungiActionPerformed
 
     private void btnAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnullaActionPerformed
@@ -121,9 +142,9 @@ public class dlgAggiungi extends javax.swing.JDialog {
     private javax.swing.JLabel lblDescrizione;
     private javax.swing.JLabel lblNome;
     private javax.swing.JLabel lblPrezzo;
+    private javax.swing.JSpinner spnPrezzo;
     private javax.swing.JTextField txtAllergeni;
     private javax.swing.JTextField txtDescrizione;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtPrezzo;
     // End of variables declaration//GEN-END:variables
 }

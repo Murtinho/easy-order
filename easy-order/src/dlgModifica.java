@@ -1,7 +1,9 @@
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 
 /*
@@ -14,18 +16,75 @@ import javax.swing.tree.TreePath;
  * @author aless
  */
 public class dlgModifica extends javax.swing.JDialog {
-
+    
     /**
      * Creates new form dlgRimuovi
      */
+    public void aggiornaMenu()
+    {
+        ArrayList<Piatto> menu = Database.getMenu();
+        
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode("Menù");
+        
+        DefaultMutableTreeNode antipasti = new DefaultMutableTreeNode("Antipasti");
+        DefaultMutableTreeNode primi = new DefaultMutableTreeNode("Primi");
+        DefaultMutableTreeNode secondi = new DefaultMutableTreeNode("Secondi");
+        DefaultMutableTreeNode pizze = new DefaultMutableTreeNode("Pizze");
+        DefaultMutableTreeNode dessert = new DefaultMutableTreeNode("Dessert");
+        DefaultMutableTreeNode bevande = new DefaultMutableTreeNode("Bevande");
+        
+        
+       
+        
+        DefaultTreeModel model = new DefaultTreeModel(root);
+        treMenù.setModel(model);
+        
+        for(Piatto p : menu)
+        {
+            if(p.getCategoria().equals("Antipasti"))
+                antipasti.add(new DefaultMutableTreeNode(p.getNome()));
+            else if(p.getCategoria().equals("Primi"))
+                primi.add(new DefaultMutableTreeNode(p.getNome()));
+            else if(p.getCategoria().equals("Secondi"))
+                secondi.add(new DefaultMutableTreeNode(p.getNome()));
+            else if(p.getCategoria().equals("Pizze"))
+                pizze.add(new DefaultMutableTreeNode(p.getNome()));
+            else if(p.getCategoria().equals("Dessert"))
+                dessert.add(new DefaultMutableTreeNode(p.getNome()));
+            else if(p.getCategoria().equals("Bevande"))
+                bevande.add(new DefaultMutableTreeNode(p.getNome()));
+        }
+        
+        if(!antipasti.isLeaf())
+            root.add(antipasti);
+        if(!primi.isLeaf())
+            root.add(primi);
+        if(!secondi.isLeaf())
+            root.add(secondi);
+        if(!pizze.isLeaf())
+            root.add(pizze);
+        if(!dessert.isLeaf())
+            root.add(dessert);
+        if(!bevande.isLeaf())
+            root.add(bevande);
+        
+        for (int i = 0; i < treMenù.getRowCount(); i++)
+        {
+            treMenù.expandRow(i);
+        }
+    }
+    
     public dlgModifica(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        aggiornaMenu();
     }
     
     private void piattoSelezionato(String piatto)
     {
-        dlgModificaMenù modificaPiatto = new dlgModificaMenù(this, true);
+        Piatto p = Database.getPiatto(piatto);
+        
+        dlgModificaMenù modificaPiatto = new dlgModificaMenù(this, true, p);
         modificaPiatto.setVisible(true);
     }
 
@@ -45,51 +104,7 @@ public class dlgModifica extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Menù");
 
-        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Menù");
-        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Antipasti");
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Gnocco fritto");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tagliere di salumi");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Primi");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pasta alla carbonara");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pasta allo scoglio");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Pizzoccheri");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Secondi");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tagliata di manzo");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Stinco arrosto");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Pizze");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Margherita");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Marinara");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Americana");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Dessert");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Tiramisù");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Gelato");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
-        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Bevande");
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Acqua");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Coca-Cola");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Birra");
-        treeNode2.add(treeNode3);
-        treeNode3 = new javax.swing.tree.DefaultMutableTreeNode("Caffè");
-        treeNode2.add(treeNode3);
-        treeNode1.add(treeNode2);
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
         treMenù.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         scrMenù.setViewportView(treMenù);
         treMenù.addMouseListener(

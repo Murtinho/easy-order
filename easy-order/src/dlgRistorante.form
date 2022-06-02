@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField1"/>
+      </Properties>
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
@@ -25,9 +32,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="pnlDati" min="-2" max="-2" attributes="0"/>
-                  <Component id="pnlBottoni" alignment="0" min="-2" pref="162" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="pnlDati" max="32767" attributes="0"/>
+                  <Component id="pnlBottoni" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -38,7 +45,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlDati" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
               <Component id="pnlBottoni" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -51,7 +58,7 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="2"/>
         <Property name="horizontalGap" type="int" value="10"/>
-        <Property name="rows" type="int" value="2"/>
+        <Property name="rows" type="int" value="3"/>
         <Property name="verticalGap" type="int" value="10"/>
       </Layout>
       <SubComponents>
@@ -60,7 +67,7 @@
             <Property name="text" type="java.lang.String" value="Username"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtUsername">
+        <Component class="javax.swing.JLabel" name="username">
         </Component>
         <Component class="javax.swing.JLabel" name="lblTavoli">
           <Properties>
@@ -73,6 +80,13 @@
               <SpinnerModel initial="1" maximum="100" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRistorante">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Nome ristorante"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtRistorante">
         </Component>
       </SubComponents>
     </Container>
@@ -88,11 +102,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Salva"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvaActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnChiudi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Chiudi"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnChiudiActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

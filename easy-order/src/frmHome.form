@@ -9,6 +9,14 @@
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Logout"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="itmChiudi">
               <Properties>
                 <Property name="mnemonic" type="int" value="99"/>
@@ -40,12 +48,12 @@
             <Property name="text" type="java.lang.String" value="Impostazioni"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="itmRistorante">
+            <MenuItem class="javax.swing.JMenuItem" name="itmAccount">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ristorante"/>
+                <Property name="text" type="java.lang.String" value="Account"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmRistoranteActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="itmAccountActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -97,7 +105,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="36" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Pizzeria san martino"/>
+        <Property name="text" type="java.lang.String" value="Easy order"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -115,106 +123,9 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
         <Property name="columns" type="int" value="10"/>
         <Property name="horizontalGap" type="int" value="10"/>
-        <Property name="rows" type="int" value="2"/>
+        <Property name="rows" type="int" value="4"/>
         <Property name="verticalGap" type="int" value="10"/>
       </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JButton" name="btn1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="1"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="2"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="3"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="4"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="5"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="6"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="7"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="8"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn9">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="9"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn10">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="10"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn11">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="11"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn12">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="12"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn13">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="13"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn14">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="14"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn15">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="15"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn16">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="16"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn17">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="17"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn18">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="18"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="btn19">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="19"/>
-          </Properties>
-        </Component>
-      </SubComponents>
     </Container>
   </SubComponents>
 </Form>
