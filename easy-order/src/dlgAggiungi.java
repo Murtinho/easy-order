@@ -111,18 +111,19 @@ public class dlgAggiungi extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAggiungiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAggiungiActionPerformed
-        Piatto p = new Piatto(txtNome.getText(), txtDescrizione.getText(), txtAllergeni.getText(), cbxCategoria.getSelectedItem().toString(), (Integer) spnPrezzo.getValue());
-        
         try
         {
+            if(txtNome.getText().equals(""))
+                throw new Exception("Inserisci il nome del piatto!");
+            
+            Piatto p = new Piatto(txtNome.getText(), txtDescrizione.getText(), txtAllergeni.getText(), cbxCategoria.getSelectedItem().toString(), (Integer) spnPrezzo.getValue());
             Database.addPiatto(p);
+            this.dispose();
         }
         catch (Exception ex)
         {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Errore", JOptionPane.ERROR_MESSAGE);
         }
-        
-        this.dispose();
     }//GEN-LAST:event_btnAggiungiActionPerformed
 
     private void btnAnnullaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnnullaActionPerformed
