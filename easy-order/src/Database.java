@@ -80,16 +80,32 @@ public class Database
         }
     }
     
-    public static void addPiatto(Piatto p) throws Exception
+    public static boolean piattoEsiste(Connection conn, Piatto p)
     {
-        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
-            PreparedStatement inserisci = conn.prepareStatement("INSERT INTO menu (piatto, user, descrizione, allergeni, categoria, prezzo) VALUES (?, ?, ?, ?, ?, ?)");
-            PreparedStatement controlla = conn.prepareStatement("SELECT piatto FROM menu WHERE piatto = ? AND user = ?"))
+        try(PreparedStatement controlla = conn.prepareStatement("SELECT piatto FROM menu WHERE piatto = ? AND user = ?"))
         {
             controlla.setString(1, p.getNome());
             controlla.setString(2, Account.getUSERNAME());
             
             if(controlla.executeQuery().next()) //Se esiste già un utente con questo username
+            {
+                return true;
+            }
+        }
+        catch(SQLException ex)
+        {
+            Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return false;
+    }
+    
+    public static void addPiatto(Piatto p) throws Exception
+    {
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement inserisci = conn.prepareStatement("INSERT INTO menu (piatto, user, descrizione, allergeni, categoria, prezzo) VALUES (?, ?, ?, ?, ?, ?)");)
+        {
+            if(piattoEsiste(conn, p)) //Se esiste già un utente con questo username
             {
                 throw new Exception("Piatto già inserito!");
             }
